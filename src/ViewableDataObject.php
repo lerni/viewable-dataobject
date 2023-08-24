@@ -357,7 +357,7 @@ class ViewableDataObject extends DataExtension
         // Ensure that this object has a non-conflicting URLSegment value.
         $count = 2;
         while (!$this->owner->validURLSegment()) {
-            $this->owner->URLSegment = preg_replace('/-[0-9]+$/', null, $this->owner->URLSegment) . '-' . $count;
+            $this->owner->URLSegment = preg_replace('/-[0-9]+$/', '', $this->owner->URLSegment) . '-' . $count;
             ++$count;
         }
 
